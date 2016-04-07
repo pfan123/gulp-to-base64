@@ -22,14 +22,14 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
 		.pipe(gulp.dest('./test/'))
     });
 
-Generate json.js demo 
+General Structures
 
 	{
 		file name : base64 encode
 	}
 
-## options API
+## Interface Options
 
 
-outPath is file path.
+`outPath` is file path.
 
