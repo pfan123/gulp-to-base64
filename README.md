@@ -25,7 +25,7 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
 Generate json.js demo 
 
 	{
-		"file name":base64 encode
+		file name : base64 encode
 	}
 
 ## options API
