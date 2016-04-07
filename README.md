@@ -1,10 +1,10 @@
-# gulp-tobase64
+# gulp-to-base64
 
 A simple gulp plugin, used to convert image，audio，video into base64 string.
 
 ## Install
 
-    npm install gulp-to－base64
+    npm install gulp-to-base64
 
 ## Usage
 
@@ -17,7 +17,7 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
     gulp.task('base64' , function(){
       return gulp.src("./images/*.{png,jpg,jpeg,mp3}")
 		.pipe(gulpBase64({
-			outPath:"./json.js"  //输出路径文件
+			outPath:"./json.js"  //out file path
 		}))
 		.pipe(gulp.dest('./test/'))
     });
@@ -27,7 +27,7 @@ Generate json.js demo
 	{
 		"file name":base64 encode
 	}
-	
+
 ## options API
 
 
