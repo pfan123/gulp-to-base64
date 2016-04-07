@@ -22,7 +22,7 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
 		.pipe(gulp.dest('./test/'))
     });
 
-General Structures
+Generate Structures
 
 	{
 		file name : base64 encode
