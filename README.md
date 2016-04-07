@@ -1,6 +1,6 @@
 # gulp-to-base64
 
-A simple gulp plugin, used to convert image，audio，video into base64 string.
+A simple gulp plugin, used to convert image(png|jpg|gif)，audio(mp3|m4a|ogg|wav|wma)，video(mp4|webm) into base64 string.
 
 ## Install
 
@@ -32,4 +32,3 @@ Generate Structures
 
 
 `outPath` is file path.
-
