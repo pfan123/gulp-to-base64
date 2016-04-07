@@ -11,7 +11,7 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
     var gulpBase64 = require("gulp-to-base64");
     gulpBase64(options);
 
-### Example
+## Example
 
     var tobase64 = require("gulp-to-base64");
     gulp.task('base64' , function(){
@@ -22,7 +22,14 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
 		.pipe(gulp.dest('./test/'))
     });
 
+Generate json.js demo 
+
+	{
+		"file name":base64 encode
+	}
+	
 ## options API
 
-outPath is filePath
+
+outPath is file path.
 
