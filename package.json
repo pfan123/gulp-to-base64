@@ -1,6 +1,6 @@
 {
   "name": "gulp-to-base64",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "images,mp3,ogg,wav,mp4 to convert base64",
   "main": "index.js",
   "scripts": {
