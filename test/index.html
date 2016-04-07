@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 标题 -->
+    <title>base64 测试demo</title>
+    <!-- 循环输出传入的参数 -->
+	<style type="text/css">
+	* {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		outline: 0;
+	}
+	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+		margin: 0;
+		padding: 0;
+		vertical-align: baseline;
+		background: transparent;
+	}
+	img {
+		border: 0 none;
+		vertical-align: top;
+	}
+	i, em {
+		font-style: normal;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	input, select, button, h1, h2, h3, h4, h5, h6 {
+		font-size: 100%;
+		font-family: inherit;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	a {
+		text-decoration: none;
+		color: #333;
+	}
+	html {
+		min-width: 100% !important;
+		min-height: 100% !important;
+	}
+	body {
+		width: 100% !important;
+		height: 100% ;
+		max-width:640px;
+		margin:0 auto;
+		left: 50%;
+		background: #FFF;
+		font-size: 14px;
+		font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+		line-height: 1.5;
+		color: #666;
+		-webkit-text-size-adjust: 100% !important;
+		-webkit-user-select: none;
+		user-select: none;
+		background: transparent;
+	}
+	.g_cf:after{
+		display:block;
+		content:'\20';
+		clear:both;
+		height:0;
+		visibility:hidden;
+	}
+	input{-webkit-appearance: none;}
+	.g_cf{
+		*zoom:1;
+		*overflow:hidden
+	}
+	input[type=number] {
+		-moz-appearance:textfield;
+	}
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}	
+	.wrapper{background: transparent;}
+	.warp_img{
+		width:100%;
+		height:5rem;
+		overflow: hidden;
+		margin-bottom: 10px
+	}
+	.gif_img{
+		width:100%;
+		height:10rem;
+		overflow: hidden;
+		margin-bottom: 10px		
+	}
+	#test1{
+		width:100%;
+		height:100%;
+	}
+	#test2{
+		width:100%;
+		height:100%;
+	}	
+	#test3{
+		width:100%;
+		height:100%;
+	}		
+	</style>
+	<script type="text/javascript">
+	!function(){
+	    var maxWidth=640;
+	    var cw=document.documentElement.clientWidth||document.body.clientWidth,zoom=maxWidth&&maxWidth<cw?maxWidth/320:cw/320,ch= document.documentElement.clientHeight || document.body.clientHeight;
+	    window.zoom=window.o2Zoom=zoom;
+	    document.write('<style id="o2HtmlFontSize">html{font-size:'+(zoom*20)+'px;}.o2-zoom,.zoom{zoom:'+(zoom/2)+';}.o2-scale{-webkit-transform: scale('+zoom/2+'); transform: scale('+zoom/2+');}</style>');
+	    window.addEventListener("resize",function(e){
+	        var cw=document.documentElement.clientWidth||document.body.clientWidth,zoom=maxWidth&&maxWidth<cw?maxWidth/320:cw/320,ch= document.documentElement.clientHeight || document.body.clientHeight;
+	        window.zoom=window.o2Zoom=zoom;
+	        document.getElementById("o2HtmlFontSize").innerHTML='html{font-size:'+(zoom*20)+'px;}.o2-zoom,.zoom{zoom:'+(zoom/2)+';}.o2-scale{-webkit-transform: scale('+zoom/2+'); transform: scale('+zoom/2+');}';
+	    });
+	}();
+	</script>
+	<body>
+	<div class="wrapper">
+		<h2>png图片</h2>
+		<div class="png_img warp_img">
+			<img src="" alt="" id = "test1">
+		</div>
+
+		<h2>jpg图片</h2>
+		<div class="jpg_img warp_img">
+			<img src="" alt="" id = "test2">
+		</div>
+
+		<h2>gif图片</h2>
+		<div class="gif_img">
+			<img src="" alt="" id = "test3">
+		</div>		
+
+		<h2>audio 听得到声音就表示成功</h2>
+	
+
+		<h2>video</h2>
+		<div class="video">
+				<video src="" width="518" height="715" preload="auto" autoplay="autoplay" loop="loop" webkit-playsinline="" id="video">
+				</video>
+			</div>
+	</div>
+	<script src="./json.js"></script>
+	<script>
+		//png
+		var Img = document.getElementById("test1");
+		Img.src = data.pgn7_1;
+
+		//jpg
+		var Img = document.getElementById("test2");
+		Img.src = data.main_bg;
+
+		//jpg
+		var Img = document.getElementById("test3");
+		Img.src = data.weather;
+
+		var sound = new Audio();
+		sound.src = data.bgmusic;
+		sound.autoplay = "autoplay";
+		sound.loop = "loop";
+
+		var video = document.getElementById("video");
+		video.src = data.weather_0;
+	</script>
+</body>
+
+</html>		
