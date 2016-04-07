@@ -17,7 +17,7 @@ A simple gulp plugin, used to convert image，audio，video into base64 string.
     gulp.task('base64' , function(){
       return gulp.src("./images/*.{png,jpg,jpeg,mp3}")
 		.pipe(gulpBase64({
-			outPath:"./json.js"  //out file path
+			outPath:"./json.js"  //output file path
 		}))
 		.pipe(gulp.dest('./test/'))
     });
