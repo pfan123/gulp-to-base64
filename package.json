@@ -1,0 +1,30 @@
+{
+  "name": "gulp-to-base64",
+  "version": "1.0.0",
+  "description": "images,mp3,ogg,wav,mp4 to convert base64",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pfan",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "through-gulp": "^0.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pfan123/gulp-base64.git"
+  },
+  "keywords": [
+    "gulp plugin",
+    "plugin",
+    "base64",
+    "to convert base64"
+  ],
+  "bugs": {
+    "url": "https://github.com/pfan123/gulp-base64/issues"
+  },
+  "homepage": "https://github.com/pfan123/gulp-base64#readme"
+}
