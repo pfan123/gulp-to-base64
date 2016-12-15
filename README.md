@@ -8,25 +8,41 @@ A simple gulp plugin, used to convert image(png|jpg|gif)，audio(mp3|m4a|ogg|wav
 
 ## Usage
 
+```
     var gulpBase64 = require("gulp-to-base64");
     gulpBase64(options);
+```
 
 ## Example
 
-    var tobase64 = require("gulp-to-base64");
+```
+    var gulpBase64 = require("gulp-to-base64");
     gulp.task('base64' , function(){
       return gulp.src("./images/*.{png,jpg,jpeg,mp3}")
 		.pipe(gulpBase64({
+			size: true  // false by default  , if true , write the width height
 			outPath:"./json.js"  //output file path
 		}))
-		.pipe(gulp.dest('./test/'))
     });
+```
 
-Generate Structures
+## Generate Structures
+	
+If size is false
 
+```
 	{
 		file name : base64 encode
 	}
+```	
+
+to true
+
+```
+	{
+		file name : {base64: base64 encode, width: xx, height: xx}
+	}
+```	
 
 ## Interface Options
 

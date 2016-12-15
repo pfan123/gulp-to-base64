@@ -2,6 +2,7 @@ var through = require("through-gulp");
 var fs = require('fs');
 var path = require("path");
 var gutil = require('gulp-util');
+var sizeOf = require('image-size');
 
 /**
  * [getFileBaseType 返回文件base64位类型值，如data:image/jpg;base64,]
@@ -72,10 +73,8 @@ function convertBase64(opts) {
     }
 
     if (file.isBuffer()) {
-
         //拿到单个文件buffer
         var content = file.contents;
-
         var extName = path.extname(file.path);
         var fileName = path.basename(file.path,extName);
 
@@ -84,17 +83,16 @@ function convertBase64(opts) {
         var fileType = getFileBaseType(file.path);
 
         if(fileType){
-            fileList[fileName] = fileType+file.contents.toString('base64');
-        }
-        // if(fileType){
-        //     fileList[fileName] = fileType+base64_encode(file.path);
-        // }           
+            fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};
+        }        
     }
     if (file.isStream()) {
+        console.log(opts.size);
         var fileType = getFileBaseType(file.path);
+ 
 
         if(fileType){
-            fileList[fileName] = fileType+base64_encode(file.path);
+            fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};;
         }        
 
     }
@@ -105,7 +103,11 @@ function convertBase64(opts) {
 
       callback();
     },function(callback) {
-      
+      if(!opts.size){
+        for(var key in fileList){
+            fileList[key] = fileList[key].base64
+        }
+      }
       writeToFile(fileList,opts.outPath,function(){
         gutil.log(gutil.colors.red(i)+gutil.colors.green("个文件已经处理完毕！"));
       })
