@@ -21,6 +21,12 @@ function getFileBaseType(pathurl){
     }else if(/.*\.mp4|webm$/.test(pathurl)){
         var baseType = "data:video/"+extName+";base64,"
         return baseType;       
+    }else if(/.*\.ttf$/.test(pathurl)){
+        var baseType = "data:application/x-font-ttf;base64,"
+        return baseType;          
+    }else if(/.*\.svg$/.test(pathurl)){
+        var baseType = "data:image/svg+xml;base64,"
+        return baseType; 
     }
     return false;  
 }
@@ -83,7 +89,11 @@ function convertBase64(opts) {
         var fileType = getFileBaseType(file.path);
 
         if(fileType){
-            fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};
+            if(/^data:image\/(png|jpg|gif|bmp)/.test(fileType)){
+              fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};
+            }else{
+              fileList[fileName] = {"base64": fileType+file.contents.toString('base64')};
+            } 
         }        
     }
     if (file.isStream()) {
@@ -92,7 +102,11 @@ function convertBase64(opts) {
  
 
         if(fileType){
-            fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};;
+            if(/^data:image\/(png|jpg|gif|bmp)/.test(fileType)){
+              fileList[fileName] = {"base64": fileType+file.contents.toString('base64'), width: sizeOf(file.path).width, height: sizeOf(file.path).height};
+            }else{
+              fileList[fileName] = {"base64": fileType+file.contents.toString('base64')};
+            } 
         }        
 
     }
