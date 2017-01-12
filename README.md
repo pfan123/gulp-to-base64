@@ -1,4 +1,4 @@
-# gulp-to-base64 [![NPM version][npm-version-image]][npm-version-url]
+# gulp-to-base64 [![npm](https://img.shields.io/badge/npm-gulp--to--base64-green.svg?style=flat-square)](https://www.npmjs.com/package/gulp-to-base64)
 
 [npm-image]: https://img.shields.io/badge/npm-gulp--to--base64-green.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/gulp-to-base64
