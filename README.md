@@ -1,4 +1,7 @@
-# gulp-to-base64 [![npm](https://img.shields.io/npm/v/npm.svg?style=plastic)](https://www.npmjs.com/package/gulp-to-base64)
+# gulp-to-base64 [![NPM version][npm-version-image]][npm-version-url]
+
+[npm-image]: https://img.shields.io/badge/npm-gulp--to--base64-green.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/gulp-to-base64
 
 A simple gulp plugin, used to convert image(png|jpg|gif)，audio(mp3|m4a|ogg|wav|wma)，video(mp4|webm), font(ttf|svg) into base64 string.
 
