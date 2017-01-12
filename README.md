@@ -40,7 +40,7 @@ to true
 
 ```
 	{
-		file name : {base64: base64 encode, width: xx, height: xx},
+		file name : {base64: base64 encode, width: xx, height: xx}, //image
 		file name : {base64: base64 encode}  //xx.ttf,xx.svg,mp3,mp4  
 	}
 ```	
